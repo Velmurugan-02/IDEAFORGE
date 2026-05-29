@@ -1,0 +1,92 @@
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeleton-block {
+  border-radius: var(--radius-sm);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+.skeleton-card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 160px;
+}
+.skeleton-card__line {
+  height: 12px;
+  border-radius: 6px;
+}
+.skeleton-card__line--short { width: 35%; }
+.skeleton-card__line--title { height: 16px; width: 85%; }
+.skeleton-card__footer {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+.skeleton-card__pill {
+  height: 28px;
+  width: 72px;
+  border-radius: var(--radius-full);
+}
+.skeleton-card__pill--sm { width: 48px; }
+
+.skeleton-lb { display: flex; flex-direction: column; gap: 10px; }
+.skeleton-lb__row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+}
+.skeleton-lb__rank { width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0; }
+.skeleton-lb__main { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.skeleton-lb__score { width: 56px; height: 24px; border-radius: 8px; flex-shrink: 0; }
+
+.skeleton-hof { margin-top: 24px; }
+.skeleton-hof__title { height: 24px; width: 240px; margin-bottom: 20px; border-radius: 8px; }
+.skeleton-hof__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+.skeleton-hof__card { min-height: 120px; }
+
+.skeleton-profile__hero {
+  display: flex;
+  gap: 20px;
+  padding: 28px;
+  margin-bottom: 24px;
+}
+.skeleton-profile__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.skeleton-profile__info { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+.skeleton-profile__bar { height: 8px; width: 100%; max-width: 400px; border-radius: 999px; margin-top: 8px; }
+.skeleton-profile__row { height: 56px; border-radius: var(--radius-md); margin-bottom: 8px; }
+
+.skeleton-collab__card { min-height: 100px; margin-bottom: 12px; }
+
+.skeleton-battle { padding: 28px; margin-top: 16px; }
+.skeleton-battle__meta { height: 28px; width: 180px; margin-bottom: 20px; }
+.skeleton-battle__vs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.skeleton-battle__side { height: 200px; border-radius: var(--radius-lg); }
+
+.admin-skel-row { margin-bottom: 16px; }
+.admin-skel-row__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 12px;
+}

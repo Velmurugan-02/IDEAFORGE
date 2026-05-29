@@ -1,0 +1,100 @@
+/* ── Auth pages (Login + Register) ── */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated gradient orbs */
+.auth-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  pointer-events: none;
+  animation: float 6s ease-in-out infinite;
+}
+.auth-orb--1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #7c3aed, transparent 70%);
+  top: -100px;
+  left: -100px;
+  animation-delay: 0s;
+}
+.auth-orb--2 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, #06b6d4, transparent 70%);
+  bottom: -80px;
+  right: -80px;
+  animation-delay: -3s;
+}
+
+/* Card */
+.auth-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 440px;
+  background: rgba(22, 22, 37, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: var(--shadow-lg), 0 0 60px rgba(124,58,237,.1);
+}
+
+/* Header */
+.auth-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.auth-logo {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 0 16px rgba(124,58,237,.7));
+}
+.auth-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.auth-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* Form */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+.auth-submit {
+  width: 100%;
+  justify-content: center;
+  padding: 13px;
+  font-size: 15px;
+  margin-top: 4px;
+}
+
+/* Switch */
+.auth-switch {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+.auth-switch-link {
+  color: var(--text-accent);
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+.auth-switch-link:hover { color: var(--accent-primary); text-decoration: underline; }

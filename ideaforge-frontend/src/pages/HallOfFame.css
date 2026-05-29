@@ -1,0 +1,174 @@
+/* ================================================================
+   HallOfFame.css
+   ================================================================ */
+.hof-page { min-height: calc(100vh - 64px); }
+
+/* ── Hero ── */
+.hof-hero {
+  background: linear-gradient(180deg, rgba(245,158,11,.12) 0%, rgba(124,58,237,.06) 60%, transparent 100%);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 40px 0 32px;
+  margin-bottom: 36px;
+  position: relative;
+  overflow: hidden;
+}
+.hof-hero::before {
+  content: '🏛️';
+  position: absolute;
+  font-size: 14rem;
+  opacity: 0.04;
+  right: -20px; top: -30px;
+  pointer-events: none;
+}
+.hof-hero__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.hof-hero__title { font-family: var(--font-display); font-size: 2.25rem; font-weight: 800; margin-bottom: 8px; }
+.hof-hero__sub   { color: var(--text-secondary); font-size: 15px; }
+
+/* ── Body ── */
+.hof-body { padding-bottom: 80px; }
+
+/* ── Empty ── */
+.hof-empty {
+  text-align: center;
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-secondary);
+}
+.hof-empty__icon { font-size: 3.5rem; }
+
+/* ── Week section ── */
+.hof-week { margin-bottom: 52px; }
+.hof-week__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.hof-week__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245,158,11,.4), transparent);
+}
+.hof-week__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hof-week__icon { font-size: 1rem; }
+
+/* ── Grid ── */
+.hof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* ── Card ── */
+.hof-card {
+  display: flex;
+  gap: 14px;
+  padding: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+.hof-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  pointer-events: none;
+}
+.hof-card:hover { transform: translateY(-3px); }
+.hof-card:hover::before { opacity: 1; }
+
+/* Gold */
+.hof-card--gold {
+  border-color: rgba(245,158,11,.4);
+  box-shadow: 0 0 20px rgba(245,158,11,.1);
+}
+.hof-card--gold::before { background: linear-gradient(135deg, rgba(245,158,11,.06), transparent); }
+.hof-card--gold:hover { border-color: rgba(245,158,11,.7); box-shadow: 0 0 28px rgba(245,158,11,.25); }
+
+/* Silver */
+.hof-card--silver {
+  border-color: rgba(148,163,184,.35);
+}
+.hof-card--silver::before { background: linear-gradient(135deg, rgba(148,163,184,.06), transparent); }
+.hof-card--silver:hover { border-color: rgba(148,163,184,.6); box-shadow: 0 0 20px rgba(148,163,184,.15); }
+
+/* Bronze */
+.hof-card--bronze {
+  border-color: rgba(180,83,9,.35);
+}
+.hof-card--bronze::before { background: linear-gradient(135deg, rgba(180,83,9,.06), transparent); }
+.hof-card--bronze:hover { border-color: rgba(180,83,9,.6); box-shadow: 0 0 20px rgba(180,83,9,.15); }
+
+/* Rank cell */
+.hof-card__rank { flex-shrink: 0; }
+.hof-card__medal {
+  font-size: 2rem;
+  display: block;
+  line-height: 1;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.3));
+}
+
+/* Body */
+.hof-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.hof-card__cat   { font-size: 11px; align-self: flex-start; }
+.hof-card__title {
+  font-family: var(--font-display);
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+}
+.hof-card__pitch {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+}
+.hof-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+}
+.hof-card__owner { font-size: 12px; color: var(--text-muted); }
+.hof-card__score { font-size: 12px; font-weight: 700; color: var(--accent-secondary); }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .hof-hero__title { font-size: 1.6rem; }
+  .hof-grid { grid-template-columns: 1fr; }
+}

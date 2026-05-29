@@ -1,0 +1,115 @@
+.user-menu {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.user-menu__trigger {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px 4px 4px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+.user-menu__trigger:hover {
+  border-color: rgba(124, 58, 237, 0.45);
+  background: rgba(124, 58, 237, 0.08);
+}
+
+.user-menu__avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 14px;
+  color: #fff;
+}
+
+.user-menu__chev {
+  font-size: 10px;
+  color: var(--text-muted);
+  padding-right: 4px;
+}
+
+.user-menu__dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  min-width: 220px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  z-index: 220;
+  overflow: hidden;
+  padding-bottom: 6px;
+}
+
+.user-menu__head {
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 4px;
+}
+.user-menu__name {
+  margin: 0 0 4px;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text-primary);
+}
+.user-menu__meta {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+.user-menu__dot { margin: 0 6px; opacity: 0.5; }
+.user-menu__xpbar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.user-menu__xpfill {
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.5s ease;
+}
+
+.user-menu__item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+.user-menu__item:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.06);
+}
+.user-menu__item--admin {
+  color: #a78bfa;
+}
+.user-menu__item--danger {
+  color: #f87171;
+}
+.user-menu__item--danger:hover {
+  background: rgba(244, 63, 94, 0.1);
+}
+
+.user-menu__sep {
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 4px 12px;
+}
