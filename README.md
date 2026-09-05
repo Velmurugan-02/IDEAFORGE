@@ -10,7 +10,7 @@
 
 - **Type:** Full-Stack Web Application  
 - **Developer:** Velmurugan (MCA Graduate)  
-- **Duration:** 2025 – Present  
+- **Duration:** 2026 – Present  
 - **Purpose:** Startup idea protection, community validation, and competitive ranking
 
 ---
